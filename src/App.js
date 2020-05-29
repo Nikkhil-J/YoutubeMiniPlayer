@@ -16,7 +16,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-      this.onTermSubmit('reactjs')
+      this.onTermSubmit('filtercopy')
     }
 
     onTermSubmit = async term => {
