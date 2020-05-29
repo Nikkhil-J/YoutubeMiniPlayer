@@ -1,34 +1,28 @@
-import React, { Component } from 'react'
+import React, {useState} from 'react'
+ 
+const Search = (props) => {
 
-export class Search extends Component {
-    state= {term: ''}
-
-    handleChange =(e) => {
-        this.setState({term: e.target.value})
-    }
-
-    handleSubmit =e => {
+    const handleSubmit =e => {
         e.preventDefault();
-        this.props.onTermSubmit(this.state.term)
-        this.setState({term:''})
+        props.onTermSubmit(term)
+        setTerm('')
     }
 
-    render() {
-        return (
-            <div className="blue" onSubmit={this.handleSubmit} className="search bar ui segment">
+    const [term, setTerm] = useState('')
+    return (
+        <div className="blue" onSubmit={handleSubmit} style={{backgroundColor:"rgb(7, 16, 49)"}} className="search-bar ui segment">
             <form className="ui form">
-                <div className="field">
+                <div className="field" style={{color:"#fff"}}>
                     <label>Video Search</label>
                     <input 
                     type="text"
-                    value={this.state.term}
-                    onChange={this.handleChange}
+                    value={term}
+                    onChange={(e) => setTerm(e.target.value)}
                     />
                 </div>
             </form>
         </div>
-        )
-    }
+    )
 }
 
 export default Search

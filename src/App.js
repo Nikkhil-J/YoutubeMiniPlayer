@@ -19,10 +19,11 @@ class App extends Component {
       this.onTermSubmit('reactjs')
     }
 
-    onTermSubmit =async term => {
+    onTermSubmit = async term => {
     const response = await youtube.get('/search',{
       params: {
         q: term,
+        type:"video",
         part:'snippet',
         maxResults: 5,
         key : KEY

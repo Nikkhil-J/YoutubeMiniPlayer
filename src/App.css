@@ -1,8 +1,16 @@
+*{
+    color: white;
+}
+
 .App{
-    background-color: red;
+    background-color: rgb(7, 16, 49);
+    padding: 15px;
+    min-height: 100vh;
+    width: 100%;
 }
 
 .wrapper{
-    background-color: lightseagreen;
+    background-color: maroon;
     min-height: 100vh;
 }
+
